@@ -1,0 +1,42 @@
+.premium-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.premium-container h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.premium-container p {
+    font-size: 18px;
+    color: #666;
+}
+
+.premium-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.premium-container ul li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.subscribe-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.subscribe-button:hover {
+    background-color: #45a049;
+}
