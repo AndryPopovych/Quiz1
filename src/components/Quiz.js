@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TbMoodNerd } from "react-icons/tb";
 import "./Quiz.css";
 
+
+const sound = new Audio('/pick-92276.mp3');
 const questionsData = {
   history: [
     { question: "Коли розпочалася Друга світова війна?", options: ["1939", "1941", "1945", "1935"], correctAnswer: "1939" },
@@ -70,13 +72,22 @@ const Quiz = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [results, setResults] = useState([]);
 
+  const playSound = () => {
+    sound.play();
+  };
+
   const handleCategorySelect = (selectedCategory) => {
+    playSound();
     setCategory(selectedCategory);
     setQuestionCount(null);
     setQuestions([]);
+    setIsFinished(false);
+    setCurrentQuestionIndex(0);
+    setScore(0);
   };
 
   const handleQuestionCountSelect = (count) => {
+    playSound();
     const selectedQuestions = questionsData[category].slice(0, count);
     setQuestions(selectedQuestions);
     setQuestionCount(count);
@@ -94,7 +105,10 @@ const Quiz = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setIsFinished(true);
-      setResults([...results, { category, score, total: questions.length }]);
+      setResults((prevResults) => [
+        ...prevResults,
+        { category, score: score, total: questions.length },
+      ]);
     }
   };
 
@@ -111,10 +125,10 @@ const Quiz = () => {
 
           {results.length > 0 && (
             <div className="results-container">
-              <h3><TbMoodNerd />Твої попередні результати:</h3>
+              <h3><TbMoodNerd /> Твої попередні результати:</h3>
               {results.map((result, index) => (
                 <div key={index} className="result-item">
-                  Категорія: {categoryNames[result.category]}; <br/>
+                  Категорія: {categoryNames[result.category]}; <br />
                   Правильних відповідей: {result.score} з {result.total}
                 </div>
               ))}

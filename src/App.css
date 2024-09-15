@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
@@ -15,11 +19,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   min-height: 100vh;
   background: radial-gradient(circle, #2587ae, #034762);
   box-sizing: border-box;
-};
+}
 
 button {
   margin: 5px;
@@ -44,6 +47,103 @@ h1 {
 }
 
 h1 svg {
-  width: 100px;
-  height: 80px;
+  width: 80px;
+  height: 60px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #123d4a;
+  margin-right: 20px;
+  font-family: 'Bangers', cursive;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-left: 20px;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.nav-links a:hover {
+  background-color: #2a6d81;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h1 svg {
+    width: 60px;
+    height: 50px;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    margin-right: 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h1 svg {
+    width: 50px;
+    height: 40px;
+  }
+
+  .navbar .logo {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+
+  .nav-links {
+    gap: 5px;
+    margin-right: 5px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 8px;
+    margin-right: 5px;
+  }
 }

@@ -1,16 +1,33 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Quiz from "./components/Quiz";
-import { MdOutlineVideogameAsset } from "react-icons/md";
+import Home from "./components/Home";
+import Account from "./components/Account";
+import { FaRegLemon } from "react-icons/fa";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="introName">
-      <h1>Квіз гра<MdOutlineVideogameAsset/></h1>
+    <Router>
+      <div className="App">
+        <nav className="navbar">
+          <div className="logo">  
+            <FaRegLemon /> sQuizzy
+          </div>
+          <ul className="nav-links">
+            <li><Link to="/">Головна</Link></li>
+            <li><Link to="/quiz">Квізи</Link></li>
+            <li><Link to="/account">Аккаунт</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
       </div>
-      <Quiz />
-    </div>
+    </Router>
   );
 }
+
 export default App;

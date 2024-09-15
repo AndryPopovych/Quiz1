@@ -84,7 +84,7 @@ button:nth-of-type(5) {
 }
 
 button:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.6);
 }
 
 .results-container {
@@ -125,3 +125,4 @@ div.isFinished button {
 div.isFinished button:hover {
     background-color: #e53935;
 }
+
